@@ -27,4 +27,5 @@ RSpec.describe Entry do
 		end
 	end
 
+
 end
