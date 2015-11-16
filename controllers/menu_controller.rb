@@ -36,11 +36,11 @@ class MenuController
 				search_entries
 				main_menu
 			when 5
-				puts "Goodbye!"
-			when 6
 				system "clear"
 				view_entry_n
 				main_menu
+			when 6
+				puts "Goodbye!"
 			exit(0)
 
 			else
@@ -114,13 +114,13 @@ class MenuController
 		print "Entry Number: "
 		index = gets.to_i
 		index = 0
-		@entries.each do |entry|
+		@address_book.entries.each do |entry|
 		if index == entry.index
 			puts entry.to_s
 		else 
 			system "clear"
 			puts "Sorry, that is not a valid input. Try again."
-			main_menu
+			entries_submenu(entry)
 		end
 	end
 		
