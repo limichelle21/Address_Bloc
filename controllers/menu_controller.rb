@@ -1,6 +1,7 @@
 require_relative '../models/address_book'
 
 class MenuController
+	
 	attr_accessor :address_book
 	
 	def initialize
@@ -13,7 +14,8 @@ class MenuController
 		puts "2 - Create an entry"
 		puts "3 - Search for an entry"
 		puts "4 - Import entries from a CSV"
-		puts "5 - Exit"
+		puts "5 - View Entry by Number"
+		puts "6 - Exit"
 		print "Enter your selection: "
 
 		selection = gets.to_i
@@ -112,18 +114,16 @@ class MenuController
 		system "clear"
 		puts "View Entry by Number"
 		print "Entry Number: "
-		index = gets.to_i
-		index = 0
+		number = gets.to_i
 		@address_book.entries.each do |entry|
-		if index == entry.index
+		if number == entry.index
 			puts entry.to_s
 		else 
 			system "clear"
 			puts "Sorry, that is not a valid input. Try again."
 			entries_submenu(entry)
-		end
+		 end
+	    end
 	end
 		
-
-
 end
