@@ -2,7 +2,7 @@ require_relative '../models/address_book'
 
 RSpec.describe AddressBook do 
 
-	let(:book) { AddressBook.new }
+	let(:book) {AddressBook.new}
 
 	def check_entry(entry, expected_name, expected_number, expected_email)
 		expect(entry.name).to eq expected_name
@@ -107,7 +107,6 @@ RSpec.describe AddressBook do
 			check_entry(entry_three, "Dwight", "555-555-3675", "dwight@blocmail.com")
 		end
 	end
-	
 
 
 
