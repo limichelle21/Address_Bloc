@@ -115,15 +115,17 @@ class MenuController
 		print "View Entry by Number: "
 		number = gets.chomp.to_i
 
-		if number < @address_book.entries.count
-			puts @address_book.entries[number]
+		if number <= @address_book.entries.count
+			system "clear"
+			puts @address_book.entries[number - 1].to_s
 			puts "Press enter to return to main menu"
 			gets.chomp
-			system "clear"
 		else
-			puts "Sorry, #{number}is not a valid input. Try again."
+			puts "Sorry, #{number} is not a valid input. Try again."
 	    	view_entry_n
 	    end
+
+	   main_menu
 	end
 		
 end
